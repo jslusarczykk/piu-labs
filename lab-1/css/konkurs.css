@@ -1,0 +1,172 @@
+html {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+}
+
+header {
+  height: 20vh;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.light_dark_mode_button {
+  float: right;
+  display: inline;
+  width: auto;
+  text-align: right;
+  font-size: 40px;
+}
+
+.light_dark_mode {
+  height: 0;
+  visibility: hidden;
+}
+
+.titletop {
+  float: left;
+  display: inline;
+  text-align: left;
+  width: 80%;
+}
+
+section {
+  padding: 30px;
+  text-align: left;
+  border-radius: 25px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 20px gray;
+}
+input,
+button,
+select,
+label,
+fieldset,
+.regulamin {
+  margin-top: 0;
+  height: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 90%;
+  text-align: left;
+}
+
+label {
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+button {
+  border-radius: 5px;
+  border: 0;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: #45a049;
+}
+button:hover {
+  background-color: #3a853e;
+}
+fieldset {
+  width: 85%;
+  margin-top: 10px;
+  height: auto;
+  input {
+    margin-top: 15px;
+    width: 10%;
+    display: inline;
+    height: auto;
+  }
+  label {
+    display: inline;
+  }
+}
+
+.regulamin {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  label {
+    display: inline;
+  }
+  input {
+    width: auto;
+    height: auto;
+    display: inline;
+  }
+}
+
+:is(
+    .regulamin label,
+    fieldset label,
+    button,
+    .color,
+    option,
+    select,
+    .light_dark_mode_button label
+  ):hover {
+  cursor: pointer;
+}
+
+.light_dark_mode:checked ~ section {
+  color-scheme: dark;
+  color: white;
+  background-color: black;
+}
+
+/* Kontener */
+.light_dark_mode_button {
+  display: inline-block;
+  margin: 1rem;
+}
+
+/* Ikonka */
+.light_dark_mode_button label {
+  font-size: 2rem;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip – ukryty tekst */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 0; /* brak zaokrągleń */
+  padding: 4px 10px;
+  position: absolute;
+  z-index: 1;
+  top: 125%; /* pod ikoną */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+  font-size: 14px;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  white-space: nowrap;
+}
+
+/* Strzałka nad tooltipem */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%; /* na górze tooltipa */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+
+/* Pokazanie tooltipa po najechaniu */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

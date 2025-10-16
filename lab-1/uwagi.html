@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Uwagi o formularzach HTML</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Uwagi o formularzach HTML</h1>
+      <p>Refleksje dotyczące zalet i ograniczeń formularzy w HTML.</p>
+    </header>
+
+    <main>
+      <article>
+        <section>
+          <h2>Zalety formularzy HTML</h2>
+          <p>
+            Formularze HTML stanowią podstawowy sposób interakcji użytkownika z
+            aplikacją webową. Pozwalają na wprowadzanie danych, przesyłanie
+            informacji na serwer oraz realizację takich zadań jak logowanie,
+            rejestracja, ankiety czy wyszukiwanie.
+          </p>
+          <ul>
+            <li>Proste w implementacji – nie wymagają programowania po stronie klienta.</li>
+            <li>Wspierane przez wszystkie przeglądarki.</li>
+            <li>Integrują się z natywnymi mechanizmami walidacji HTML5.</li>
+            <li>Umożliwiają łatwe przekazywanie danych metodami <code>GET</code> i <code>POST</code>.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Ograniczenia formularzy HTML</h2>
+          <p>
+            Pomimo wielu zalet, formularze HTML mają również swoje ograniczenia,
+            zwłaszcza bez wsparcia JavaScript czy technologii serwerowych.
+          </p>
+          <ul>
+            <li>Brak dynamicznej walidacji danych – wymaga przeładowania strony.</li>
+            <li>Ograniczone możliwości reagowania na zdarzenia użytkownika.</li>
+            <li>Brak możliwości asynchronicznego wysyłania danych (bez JS/AJAX).</li>
+            <li>Trudniejsza kontrola nad komunikatami błędów i logiką formularza.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Kiedy warto stosować formularze HTML?</h2>
+          <p>
+            Formularze HTML warto stosować w prostych przypadkach, gdy zależy
+            nam na kompatybilności i prostocie:
+          </p>
+          <ul>
+            <li>Proste formularze kontaktowe lub zapisu do newslettera.</li>
+            <li>Formularze demonstracyjne i edukacyjne (np. testowanie w <code>httpbin.org</code>).</li>
+            <li>Sytuacje, gdy dane przetwarzane są po stronie serwera bez interakcji klienta.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Kiedy warto sięgnąć po JavaScript?</h2>
+          <p>
+            JavaScript warto zastosować, gdy formularz ma być bardziej
+            interaktywny lub dynamiczny:
+          </p>
+          <ul>
+            <li>Wielostronicowe kreatory formularzy (np. rejestracja krok po kroku).</li>
+            <li>Dynamiczne walidacje, podpowiedzi i komunikaty błędów.</li>
+            <li>Wysyłanie danych w tle (AJAX, Fetch API) bez przeładowania strony.</li>
+            <li>Integracje z API lub aplikacjami SPA (React, Vue, Angular).</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <p>© 2025 Jan Ślusarczyk — Laboratoria HTML i CSS</p>
+      <a href="..">Powrót</a>
+    </footer>
+  </body>
+</html>
