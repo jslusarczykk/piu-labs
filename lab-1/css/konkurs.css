@@ -1,172 +1,165 @@
+/* ---------------- Base Styles ---------------- */
 html {
   font-family: system-ui, sans-serif;
   font-size: 16px;
+  line-height: 1.5;
+  color-scheme: light dark;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--body-bg);
+  color: var(--body-text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* --------------- Theme Variables ---------------- */
+:root {
+  --body-bg: #ffffff;
+  --body-text: #000000;
+  --form-bg: #ffffff;
+  --form-border: 1px solid #000000;
+  --input-bg: #ffffff;
+  --input-text: #000000;
+  --submit-bg: #52b457;
+  --submit-hover: #45a049;
+  --icon-content: "🌞";
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --body-text: #000000;
+    --form-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-text: #000000;
+    --submit-bg: #52b457;
+    --submit-hover: #45a049;
+    --icon-content: "🌞";
+  }
+  :root:has(#themeSwitch:checked) {
+    --body-text: #ffffff;
+    --form-bg: #242629;
+    --input-bg: #3d4046;
+    --input-text: #ffffff;
+    --submit-bg: #5bc85b;
+    --submit-hover: #4fb14f;
+    --icon-content: "🌙";
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-text: #ffffff;
+    --form-bg: #242629;
+    --input-bg: #3d4046;
+    --input-text: #ffffff;
+    --submit-bg: #5bc85b;
+    --submit-hover: #4fb14f;
+    --icon-content: "🌙";
+  }
+  :root:has(#themeSwitch:checked) {
+    --body-text: #000000;
+    --form-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-text: #000000;
+    --submit-bg: #52b457;
+    --submit-hover: #45a049;
+    --icon-content: "🌞";
+  }
+}
+
+/* --------------- Header and Icon ---------------- */
 header {
-  height: 20vh;
-  max-width: 550px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.light_dark_mode_button {
-  float: right;
-  display: inline;
-  width: auto;
-  text-align: right;
-  font-size: 40px;
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  flex: 1;
 }
 
-.light_dark_mode {
-  height: 0;
-  visibility: hidden;
+#themeSwitch {
+  display: none;
 }
 
-.titletop {
-  float: left;
-  display: inline;
-  text-align: left;
-  width: 80%;
-}
-
-section {
-  padding: 30px;
-  text-align: left;
-  border-radius: 25px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0px 0px 20px gray;
-}
-input,
-button,
-select,
-label,
-fieldset,
-.regulamin {
-  margin-top: 0;
-  height: 5vh;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width: 90%;
-  text-align: left;
-}
-
-label {
-  height: auto;
-  margin-top: 10px;
-  margin-bottom: 0;
-}
-button {
-  border-radius: 5px;
-  border: 0;
-  text-align: center;
-  margin-top: 10px;
-  font-weight: bold;
-  color: white;
-  background-color: #45a049;
-}
-button:hover {
-  background-color: #3a853e;
-}
-fieldset {
-  width: 85%;
-  margin-top: 10px;
-  height: auto;
-  input {
-    margin-top: 15px;
-    width: 10%;
-    display: inline;
-    height: auto;
-  }
-  label {
-    display: inline;
-  }
-}
-
-.regulamin {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  label {
-    display: inline;
-  }
-  input {
-    width: auto;
-    height: auto;
-    display: inline;
-  }
-}
-
-:is(
-    .regulamin label,
-    fieldset label,
-    button,
-    .color,
-    option,
-    select,
-    .light_dark_mode_button label
-  ):hover {
-  cursor: pointer;
-}
-
-.light_dark_mode:checked ~ section {
-  color-scheme: dark;
-  color: white;
-  background-color: black;
-}
-
-/* Kontener */
-.light_dark_mode_button {
-  display: inline-block;
-  margin: 1rem;
-}
-
-/* Ikonka */
-.light_dark_mode_button label {
+#themeSwitch + label::after {
+  content: var(--icon-content);
   font-size: 2rem;
   cursor: pointer;
-  position: relative;
-  display: inline-block;
+  transition: transform 0.3s;
 }
 
-/* Tooltip – ukryty tekst */
-.tooltip .tooltiptext {
-  visibility: hidden;
+/* --------------- Form Styling ---------------- */
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--form-bg);
+  border: var(--form-border);
+  border-radius: 8px;
+  color: var(--body-text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+form > * {
+  margin: 10px 20px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form input[type="number"],
+form input[type="color"],
+form select,
+form datalist {
+  width: calc(100% - 40px);
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: var(--form-border);
+  background-color: var(--input-bg);
+  color: var(--input-text);
+}
+
+form input[type="submit"] {
+  background-color: var(--submit-bg);
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--submit-hover);
+}
+
+/* Fieldset & Checkbox */
+fieldset {
+  margin: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #888;
+  padding: 10px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
   width: auto;
-  background-color: #ffffff;
-  color: #000000;
-  text-align: center;
-  border: 1px solid #000000;
-  border-radius: 0; /* brak zaokrągleń */
-  padding: 4px 10px;
-  position: absolute;
-  z-index: 1;
-  top: 125%; /* pod ikoną */
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.1s ease-in-out;
-  font-size: 14px;
-  font-family: "Segoe UI", Tahoma, sans-serif;
-  white-space: nowrap;
+  margin-right: 5px;
 }
 
-/* Strzałka nad tooltipem */
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  bottom: 100%; /* na górze tooltipa */
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent #333 transparent;
+label[for="acceptRules"] {
+  display: inline-block;
+  margin-top: 10px;
 }
 
-/* Pokazanie tooltipa po najechaniu */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+header h1 {
+  color: black !important;
 }
