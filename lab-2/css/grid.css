@@ -1,0 +1,214 @@
+/* ========================= */
+/* RESET STYLÓW              */
+/* ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Reset dla treści głównej i panelu bocznego */
+main,
+aside {
+  h1,
+  h2,
+  h3,
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* ========================= */
+/* ZMIENNE KOLORÓW           */
+/* ========================= */
+:root {
+  --bg: #f0f0f0;
+  --header: #f59e0b;
+  --nav: #1e78b4;
+  --aside: #e6f6ec;
+  --footer: #22c55e;
+  --text: #0b0b0c;
+}
+
+/* ========================= */
+/* UKŁAD MOBILNY (PODSTAWA)  */
+/* ========================= */
+html,
+body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+  gap: 12px;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 0 16px 16px;
+}
+
+/* ------------------------- */
+/* HEADER                    */
+/* ------------------------- */
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--header);
+  color: #fff;
+  border-radius: 6px;
+}
+
+header .logo {
+  background: #fff2;
+  border: 1px solid #ffffff55;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-weight: 700;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* ------------------------- */
+/* NAWIGACJA (MENU)          */
+/* ------------------------- */
+nav {
+  grid-area: nav;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: var(--nav);
+  border-radius: 6px;
+  padding: 10px 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background: #ffffff22;
+}
+
+/* ------------------------- */
+/* GŁÓWNA SEKCJA             */
+/* ------------------------- */
+main {
+  grid-area: main;
+  background: #fff;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+main h2 {
+  margin: 18px 0 10px;
+}
+
+/* ------------------------- */
+/* PANEL BOCZNY              */
+/* ------------------------- */
+aside {
+  grid-area: aside;
+  background: var(--aside);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+aside h3 {
+  margin-top: 0;
+}
+
+aside div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 14px;
+  font-size: 38px;
+  margin-top: 10px;
+}
+
+/* ------------------------- */
+/* STOPKA                    */
+/* ------------------------- */
+footer {
+  grid-area: footer;
+  background: var(--footer);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  font-weight: 600;
+}
+
+/* ========================= */
+/* DESKTOP (MIN-WIDTH 1024px)*/
+/* ========================= */
+@media (min-width: 1024px) {
+  /* szare marginesy po bokach */
+  body {
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* główny kontener */
+  .container {
+    display: grid;
+    max-width: 1200px;
+    width: 100%;
+    background: var(--bg);
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "header header"
+      "nav nav"
+      "main aside"
+      "footer footer";
+    gap: 14px;
+    padding: 0 24px 24px;
+  }
+
+  /* menu poziome */
+  nav {
+    flex-direction: row; /* poziomo */
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+  }
+
+  /* panel boczny - układ 2 elementy w wierszu */
+  aside div {
+    display: grid;                      /* użycie CSS Grid */
+    grid-template-columns: repeat(2, 1fr); /* 2 elementy w jednym wierszu */
+    gap: 18px 14px;                     /* pionowy i poziomy odstęp */
+    justify-items: center;              /* wyśrodkowanie w kolumnie */
+    align-items: center;                /* wyśrodkowanie w wierszu */
+    font-size: 44px;                    /* rozmiar ikon */
+    margin-top: 10px;
+  }
+}
