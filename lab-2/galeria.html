@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeria</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .gallery {
+    display: grid;
+    gap: 20px;
+  }
+
+  figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  figure:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    border-radius: 12px 12px 0 0;
+  }
+
+  figcaption {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  /* ===================== */
+  /* RESPONSYWNOŚĆ         */
+  /* ===================== */
+  .gallery {
+    grid-template-columns: 1fr; /* domyślnie 1 kolumna */
+  }
+
+  @media (min-width: 1200px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr); /* 2 kolumny od 1200px */
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Moja Galeria</h1>
+
+<div class="gallery">
+  <figure>
+    <img src="akali/akali1.jpg" alt="Akali 1">
+    <figcaption>Akali 1</figcaption>
+  </figure>
+
+  <figure>
+    <img src="akali/akali2.jpg" alt="Akali 2">
+    <figcaption>Akali 2</figcaption>
+  </figure>
+
+  <figure>
+    <img src="akali/akali3.jpg" alt="Akali 3">
+    <figcaption>Akali 3</figcaption>
+  </figure>
+
+  <figure>
+    <img src="akali/akali4.png" alt="Akali 4">
+    <figcaption>Akali 4</figcaption>
+  </figure>
+
+  <figure>
+    <img src="akali/akali5.jpg" alt="Akali 5">
+    <figcaption>Akali 5</figcaption>
+  </figure>
+
+  <figure>
+    <img src="akali/akali6.jpg" alt="Akali 6">
+    <figcaption>Akali 6</figcaption>
+  </figure>
+
+  <figure>
+    <img src="akali/akali7.jpg" alt="Akali 7">
+    <figcaption>Akali 7</figcaption>
+  </figure>
+
+  <figure>
+    <img src="akali/akali8.jpg" alt="Akali 8">
+    <figcaption>Akali 8</figcaption>
+  </figure>
+
+  <figure>
+    <img src="akali/akali9.jpg" alt="Akali 9">
+    <figcaption>Akali 9</figcaption>
+  </figure>
+
+  <figure>
+    <img src="akali/akali10.jpg" alt="Akali 10">
+    <figcaption>Akali 10</figcaption>
+  </figure>
+</div>
+
+</body>
+</html>
