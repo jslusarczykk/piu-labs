@@ -2,4 +2,163 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 1rem;
+  box-sizing: border-box;
+}
+
+fieldset {  
+    border: 3px solid #f0a14b;
+    background-color: #fffbe7;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 9px;
+}
+
+.container {
+    background-color: #fffbe7;
+    color: white;
+    display: flex;
+    border: 3px solid #f0a14c;
+    padding: 1rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+    gap: 1rem;
+}
+
+.item {
+    height: 4em;
+    border-radius: 10px;
+}
+
+body:has(input[value="blue"]:checked) {
+    .container {
+        @media (width >= 1024px) {
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        @media (width < 1024px) {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;            
+        }
+    }
+
+    .item {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        background-color: blue;
+        height: 3em;
+        border-radius: 10px;
+        width: 30%;
+
+          @media (width >= 1024px) {
+              width: 30% !important;
+          }
+
+          @media (width < 1024px) {
+              width: 60% !important;
+          }
+    }
+}
+
+body:has(input[value="red"]:checked) {
+    .container {
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .item {
+        display: flex;
+        height: 5em;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+            @media (width < 1024px) {  
+                flex: 1 1 40%;
+            }
+    }
+    .item:nth-child(2),
+    .item:nth-child(3) {
+        flex-grow: 1;
+        order: 1;
+    }
+    .item:nth-child(4),
+    .item:nth-child(5) {
+        flex-grow: 1;
+        order: 3;
+    }
+    .item:nth-child(1) {
+        font-weight: bold;
+        order: 2;
+        flex-grow: 2;
+        &::after {
+            content: " (Jestem większy i na środku!) ";
+            margin-top: 1.8rem;
+            position: absolute;
+            font-size: 80%;
+        }
+            @media (width < 1024px) { 
+            flex: 1 1 64%;
+            }
+    }
+    
+}   
+
+body:has(input[value="green"]:checked) {
+    .container {
+        @media (width < 1024px) {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: end;
+        }
+    }
+    .item {
+        justify-content: center;
+        gap: 1.5rem;
+        display: flex;
+        align-items: center;
+        background-color: green;
+        height: 3.5em;
+    }
+    
+    .item:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 5;
+        &::before, &::after {
+            padding: 0 5px;
+            content: '😀';
+            font-size: 200%;
+            line-height: 0;
+        }
+            @media (width < 1024px) { 
+                width: 90% !important;
+            }
+    }
+    .item:nth-child(2) {
+        flex-grow: 4;
+            @media (width < 1024px) { 
+                width: 75% !important;
+            }
+    }
+    .item:nth-child(3) {
+        flex-grow: 3;
+            @media (width < 1024px) { 
+                width: 60% !important;
+            }
+    }
+    .item:nth-child(4) {
+        flex-grow: 2;
+            @media (width < 1024px) { 
+                width: 45% !important;
+            }
+    }
+    .item:nth-child(5) {
+        flex-grow: 1;
+            @media (width < 1024px) { 
+                width: 30% !important;
+            }
+    }
 }
