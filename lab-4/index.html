@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Lab 4</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <h1>Lab 4</h1>
+<head>
+    <meta charset="UTF-8">
+    <title>Kanban - Lab 4</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="kanban.js" defer></script>
+</head>
+<body>
+    <h1>Tablica Kanban</h1>
+
+    <main id="board">
+        <section data-col="todo">
+            <h2>Do zrobienia</h2>
+            <p class="counter"></p>
+            <button class="add">Dodaj kartę</button>
+            <button class="paint">Koloruj kolumnę</button>
+            <button class="sort">Sortuj</button>
+            <div class="cards"></div>
+        </section>
+
+        <section data-col="doing">
+            <h2>W trakcie</h2>
+            <p class="counter"></p>
+            <button class="add">Dodaj kartę</button>
+            <button class="paint">Koloruj kolumnę</button>
+            <button class="sort">Sortuj</button>
+            <div class="cards"></div>
+        </section>
+
+        <section data-col="done">
+            <h2>Zrobione</h2>
+            <p class="counter"></p>
+            <button class="add">Dodaj kartę</button>
+            <button class="paint">Koloruj kolumnę</button>
+            <button class="sort">Sortuj</button>
+            <div class="cards"></div>
+        </section>
+    </main>
+
     <a href="..">Powrót</a>
-  </body>
+</body>
 </html>
